@@ -1,12 +1,18 @@
 import { Link } from 'react-router-dom'
 import { usePosts } from '../hooks/usePosts'
 import MockDataNotice from '../components/MockDataNotice'
+import Seo from '../components/Seo'
 
 export default function Blog() {
   const { posts, loading, isMock } = usePosts()
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-16">
+      <Seo
+        title="Blog"
+        description="Chia sẻ kiến thức, kinh nghiệm thực tế về kế toán, thuế và quản trị doanh nghiệp từ CETA Academy."
+      />
+
       <div className="text-center">
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">Blog</h1>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600">
@@ -30,7 +36,7 @@ export default function Blog() {
               <Link
                 key={post.id}
                 to={`/blog/${post.slug}`}
-                className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-blue-300 hover:shadow-md"
+                className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-gold-400 hover:shadow-md"
               >
                 {post.cover_image && (
                   <img
@@ -44,7 +50,7 @@ export default function Blog() {
                   {post.excerpt && (
                     <p className="mt-2 flex-1 text-sm text-slate-600">{post.excerpt}</p>
                   )}
-                  <span className="mt-4 text-sm font-medium text-blue-700">Đọc tiếp →</span>
+                  <span className="mt-4 text-sm font-medium text-charcoal-800">Đọc tiếp →</span>
                 </div>
               </Link>
             ))}

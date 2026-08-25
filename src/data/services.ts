@@ -1,14 +1,25 @@
+import type { IconName } from '../components/Icon'
+
+export const SERVICE_CATEGORIES = ['Kế toán & Thuế', 'Doanh nghiệp & Nhân sự'] as const
+
+export type ServiceCategory = (typeof SERVICE_CATEGORIES)[number]
+
 export interface Service {
   slug: string
+  icon: IconName
+  category: ServiceCategory
   title: string
   shortDescription: string
   description: string
   features: string[]
+  process: string[]
 }
 
 export const services: Service[] = [
   {
     slug: 'ke-toan-tron-goi',
+    icon: 'briefcase',
+    category: 'Kế toán & Thuế',
     title: 'Kế toán trọn gói',
     shortDescription:
       'Đảm nhận toàn bộ công tác kế toán hàng tháng, giúp doanh nghiệp tuân thủ đúng quy định pháp luật.',
@@ -21,9 +32,17 @@ export const services: Service[] = [
       'Tư vấn tối ưu chi phí, thuế hợp pháp',
       'Đại diện làm việc với cơ quan thuế khi cần',
     ],
+    process: [
+      'Khảo sát tình hình sổ sách kế toán hiện tại của doanh nghiệp',
+      'Ký hợp đồng dịch vụ, bàn giao chứng từ',
+      'Xử lý hạch toán và kê khai thuế định kỳ hàng tháng',
+      'Báo cáo kết quả và tư vấn định kỳ',
+    ],
   },
   {
     slug: 'quyet-toan-thue',
+    icon: 'badge',
+    category: 'Kế toán & Thuế',
     title: 'Quyết toán thuế',
     shortDescription:
       'Rà soát, lập và nộp hồ sơ quyết toán thuế TNDN, TNCN cuối năm, hạn chế rủi ro bị truy thu, xử phạt.',
@@ -36,9 +55,17 @@ export const services: Service[] = [
       'Đồng hành giải trình khi cơ quan thuế yêu cầu',
       'Tư vấn xử lý các khoản chi phí không hợp lệ',
     ],
+    process: [
+      'Tiếp nhận và rà soát toàn bộ hồ sơ, chứng từ trong năm',
+      'Đối chiếu, chuẩn hoá số liệu kế toán',
+      'Lập và nộp hồ sơ quyết toán thuế',
+      'Hỗ trợ giải trình sau quyết toán (nếu có)',
+    ],
   },
   {
     slug: 'tu-van-thue',
+    icon: 'shield',
+    category: 'Kế toán & Thuế',
     title: 'Tư vấn thuế',
     shortDescription:
       'Tư vấn chính sách thuế, tối ưu nghĩa vụ thuế và xử lý các tình huống phát sinh trong quá trình kinh doanh.',
@@ -51,9 +78,17 @@ export const services: Service[] = [
       'Cập nhật văn bản pháp luật thuế mới nhất',
       'Tư vấn theo từng tình huống thực tế của doanh nghiệp',
     ],
+    process: [
+      'Tiếp nhận câu hỏi, tình huống cụ thể của doanh nghiệp',
+      'Nghiên cứu, đối chiếu quy định pháp luật hiện hành',
+      'Đưa ra phương án tư vấn, giải pháp cụ thể',
+      'Đồng hành hỗ trợ triển khai thực tế',
+    ],
   },
   {
     slug: 'thanh-lap-doanh-nghiep',
+    icon: 'check',
+    category: 'Doanh nghiệp & Nhân sự',
     title: 'Thành lập doanh nghiệp',
     shortDescription:
       'Hỗ trợ trọn gói thủ tục thành lập công ty, đăng ký kinh doanh nhanh chóng, đúng quy định.',
@@ -66,9 +101,17 @@ export const services: Service[] = [
       'Khắc dấu, mở tài khoản ngân hàng',
       'Hướng dẫn thủ tục sau thành lập',
     ],
+    process: [
+      'Tư vấn loại hình doanh nghiệp, ngành nghề kinh doanh',
+      'Soạn hồ sơ và nộp đăng ký tại cơ quan có thẩm quyền',
+      'Hỗ trợ khắc dấu, đăng ký mã số thuế, hoá đơn điện tử',
+      'Hoàn tất thủ tục sau thành lập',
+    ],
   },
   {
     slug: 'dich-vu-luong-bhxh',
+    icon: 'users',
+    category: 'Doanh nghiệp & Nhân sự',
     title: 'Dịch vụ lương & BHXH',
     shortDescription:
       'Tính lương, thuế TNCN và thực hiện thủ tục bảo hiểm xã hội cho người lao động chính xác, đúng hạn.',
@@ -80,6 +123,12 @@ export const services: Service[] = [
       'Lập hồ sơ hưởng chế độ BHXH, BHTN',
       'Tư vấn quy định lao động, tiền lương',
       'Bảo mật thông tin lương của người lao động',
+    ],
+    process: [
+      'Tiếp nhận dữ liệu chấm công, hợp đồng lao động',
+      'Tính bảng lương, thuế TNCN hàng tháng',
+      'Thực hiện thủ tục báo tăng, báo giảm BHXH',
+      'Bàn giao báo cáo, tư vấn khi có phát sinh',
     ],
   },
 ]

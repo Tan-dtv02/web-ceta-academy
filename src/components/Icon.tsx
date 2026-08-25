@@ -9,6 +9,15 @@ export type IconName =
   | 'menu'
   | 'close'
   | 'arrow-right'
+  | 'map-pin'
+  | 'phone'
+  | 'mail'
+  | 'chat'
+  | 'arrow-up'
+  | 'image'
+  | 'play'
+  | 'chevron-down'
+  | 'chevron-right'
 
 interface IconProps {
   name: IconName
@@ -98,6 +107,66 @@ export default function Icon({ name, className = 'h-5 w-5' }: IconProps) {
         <svg {...common} strokeWidth={2}>
           <line x1="4" y1="12" x2="20" y2="12" />
           <path d="M14 6l6 6-6 6" />
+        </svg>
+      )
+    case 'map-pin':
+      return (
+        <svg {...common}>
+          <path d="M12 21s7-7.5 7-12.5a7 7 0 1 0-14 0C5 13.5 12 21 12 21z" />
+          <circle cx="12" cy="8.5" r="2.5" />
+        </svg>
+      )
+    case 'phone':
+      return (
+        <svg {...common}>
+          <rect x="7" y="2" width="10" height="20" rx="2" />
+          <line x1="10" y1="18" x2="14" y2="18" />
+        </svg>
+      )
+    case 'mail':
+      return (
+        <svg {...common}>
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="M3 7l9 6 9-6" />
+        </svg>
+      )
+    case 'chat':
+      return (
+        <svg {...common}>
+          <path d="M4 5h16v10H8l-4 4V5z" />
+        </svg>
+      )
+    case 'arrow-up':
+      return (
+        <svg {...common} strokeWidth={2}>
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <path d="M6 10l6-6 6 6" />
+        </svg>
+      )
+    case 'image':
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <circle cx="8.5" cy="9.5" r="1.5" />
+          <path d="M21 15l-5-5-4 4-3-3-6 6" />
+        </svg>
+      )
+    case 'play':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      )
+    case 'chevron-down':
+      return (
+        <svg {...common} strokeWidth={2}>
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      )
+    case 'chevron-right':
+      return (
+        <svg {...common} strokeWidth={2}>
+          <path d="M9 6l6 6-6 6" />
         </svg>
       )
   }

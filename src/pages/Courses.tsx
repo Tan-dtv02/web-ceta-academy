@@ -1,12 +1,18 @@
 import { useCourses } from '../hooks/useCourses'
 import CourseCard from '../components/CourseCard'
 import MockDataNotice from '../components/MockDataNotice'
+import Seo from '../components/Seo'
 
 export default function Courses() {
   const { courses, loading, isMock } = useCourses()
 
   return (
     <>
+      <Seo
+        title="Đào tạo Kế toán - Thuế"
+        description="Các khóa học Kế toán trưởng, ôn thi CPA, kế toán thực hành và thuế chuyên sâu tại CETA Academy."
+      />
+
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center">
           <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">

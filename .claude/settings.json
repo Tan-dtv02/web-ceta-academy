@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf /d/Web_CETA_Academy/dist *)",
+      "Bash(node contact-test.mjs)",
+      "Bash(node footer-test.mjs)",
+      "Bash(node newsections-test.mjs)",
+      "Bash(node -e ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Thinkpad\\AppData\\Local\\Temp\\claude\\d--Web-CETA-Academy\\af604fc3-7229-4ac8-b307-77e18023e6b5\\scratchpad"
+    ]
+  }
+}

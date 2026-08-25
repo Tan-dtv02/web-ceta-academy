@@ -70,12 +70,12 @@ export default function PricingSection() {
               key={plan.name}
               className={`flex flex-col rounded-xl border p-6 ${
                 plan.highlighted
-                  ? 'border-blue-600 bg-blue-50/40 shadow-md'
+                  ? 'border-gold-500 bg-gold-50/40 shadow-md'
                   : 'border-slate-200 bg-white'
               }`}
             >
               {plan.highlighted && (
-                <span className="mb-3 inline-block w-fit rounded-full bg-blue-700 px-3 py-1 text-xs font-semibold text-white">
+                <span className="mb-3 inline-block w-fit rounded-full bg-charcoal-900 px-3 py-1 text-xs font-semibold text-white">
                   Phổ biến nhất
                 </span>
               )}
@@ -88,7 +88,7 @@ export default function PricingSection() {
               <ul className="mt-6 flex-1 space-y-3">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
-                    <Icon name="check" className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
+                    <Icon name="check" className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold-700" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -97,8 +97,8 @@ export default function PricingSection() {
                 to="/contact"
                 className={`mt-6 rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition ${
                   plan.highlighted
-                    ? 'bg-blue-700 text-white hover:bg-blue-800'
-                    : 'border border-slate-300 text-slate-700 hover:border-blue-300 hover:text-blue-700'
+                    ? 'bg-gold-500 text-charcoal-900 hover:bg-gold-600'
+                    : 'border border-charcoal-300 text-charcoal-700 hover:border-gold-400 hover:text-charcoal-900'
                 }`}
               >
                 Liên hệ tư vấn

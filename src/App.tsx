@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import FloatingActions from './components/FloatingActions'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -10,10 +12,12 @@ import CourseDetail from './pages/CourseDetail'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <Routes>
@@ -26,9 +30,11 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   )
 }
